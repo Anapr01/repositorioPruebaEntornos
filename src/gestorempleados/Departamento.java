@@ -7,12 +7,23 @@
  *
  * @author Usuario
  */
-public class Departamento {
+class Departamento {
+    private String nombre;
+    private List<Empleado> empleados;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        // TODO code application logic here
+    public Departamento(String nombre) {
+        this.nombre = nombre;
+        this.empleados = new ArrayList<>();
+    }
+
+    public void agregarEmpleado(Empleado empleado) {
+        empleados.add(empleado);
+    }
+
+    public void mostrarEmpleados() {
+        System.out.println("Empleados del departamento " + nombre + ":");
+        for (Empleado empleado : empleados) {
+            System.out.println(empleado);
+        }
     }
 }
